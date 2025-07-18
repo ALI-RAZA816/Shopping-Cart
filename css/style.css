@@ -1,0 +1,384 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: sans-serif;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+header{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    background-color: #2C3E50;
+    align-items: center;
+    position: relative;
+}
+
+header.active{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+nav{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+nav .logo{
+    display: flex;
+}
+
+nav .logo h1{
+    color: #fff;
+    font-size: 2rem;
+}
+
+nav .logo h1:last-child{
+    color: #E74C3C;
+}
+
+nav .cart{
+    position: relative;
+}
+
+nav .cart i{
+    font-size: 1.2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+nav .cart p{
+    position: absolute;
+    height: 20px;
+    aspect-ratio: 1;
+    top:-15px;
+    right:-15px;
+    color: #fff;
+    font-size:.9rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    background-color: #E74C3C;
+}
+
+nav#nav-menu{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #34495E;
+}
+
+#nav-menu ul{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+}
+
+#nav-menu ul li{
+    display: inline-block;
+    list-style-type: none;
+    padding: 15px 10px;
+    transition: .30s ease;
+}
+
+#nav-menu ul li:hover{
+    background-color: #2C3E50;
+}
+
+#nav-menu ul li a{
+    color: #fff;
+    font-weight: normal;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.hero-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 380px;
+    background:linear-gradient(to right, #3E91D7,#5E7ECC,#8C63BC);
+}
+
+.hero-section div{
+    text-align: center;
+    color: #fff;
+}
+
+.hero-section div h1{
+    font-size: 3rem;
+    margin-bottom:30px;
+    text-wrap: nowrap;
+}
+
+.hero-section div p{
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    line-height: 25px;
+}
+
+.hero-section div button{
+    height: 45px;
+    min-width:150px;
+    text-wrap: nowrap;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: 550;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: #E74C3C;
+}
+
+section#card-products{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+section#card-products > h1{
+    text-align: center;
+    font-size:2.3rem;
+    color: #2C3E50;
+    margin-top: 3rem;
+}
+
+.card-section{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:50px;
+    justify-content:center;
+    align-items: center;
+    margin: 2.5rem 0;
+}
+
+.card{
+    width: 100%;
+    max-width: 350px;
+    border-radius:10px;
+    overflow: hidden;
+    box-shadow:  0 0 10px 2px #ccc;
+    background-color: #fff;
+}
+
+.card img{
+    width: 100%;
+    height:200px;
+    object-fit: cover;
+}
+
+.card .description{
+    padding:15px 20px;
+}
+
+.card .description h1{
+    font-size: 1.2rem;
+    color: #2C3E50;
+    margin-bottom:.5rem;
+}
+
+.card .description p{
+    color: #818181;
+    font-size:.9rem;
+    margin-bottom:1.5rem;
+}
+
+.card .description span{
+    color: #E74C3C;
+    font-weight: bold;
+    font-size: 1.3rem;
+    display: inline-block;
+    margin-bottom: .8rem;
+}
+
+.card .description button{
+    height: 40px;
+    width: 100%;
+    border:none;
+    outline: none;
+    color: #fff;
+    border: 5px;
+    border-radius: 5px;
+    background-color: #34495E;
+    cursor: pointer;
+}
+
+.cart-items-container.active{
+    position: absolute;
+    top: 0;
+    right:0;
+}
+
+.cart-items-container{
+    position: absolute;
+    top: 0;
+    right:-100%;
+    height: 100vh;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    width: 330px;
+    transition: .40s ease;
+    background-color: #fff;
+    z-index: 999;
+}
+
+.cart-header{
+    background-color: #2C3E50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+}
+
+.cart-header h1{
+    color: #fff;
+    text-align: left;
+    text-wrap: nowrap;
+    font-size: 1.2rem;
+}
+
+.cart-header i{
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.cart-item {
+    padding: 20px 15px;
+    text-align: left;
+}
+
+.cart-item p.text{
+    color: #333;
+    font-size: 1rem;
+}
+
+.cart-items-container .total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:15px;
+}
+
+.cart-items-container .total span{
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.cart-items-container .proceedBtn{
+    padding:15px;
+}
+
+.cart-items-container .proceedBtn button {
+    height: 50px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #2C3E50;
+    font-weight: 550;
+    cursor: pointer;
+}
+
+.cart-item > div{
+    display: flex;
+    padding:1rem 0;
+    border-bottom: 1px solid #818181;
+}
+
+.cart-item img{
+    height:100px;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+
+.cart-item div > div {
+    display: flex;
+    flex-direction: column;
+    text-wrap: nowrap;
+    margin-left: 1rem;
+}
+
+.cart-item div > div h1 {
+    color:#2C3E50;
+    font-size: 1rem;
+    margin-bottom: .9rem;
+}
+
+footer{
+    background-color: #34495E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-container{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    gap:130px;
+    padding:25px 0;
+}
+
+.main-container .box h1{
+    font-size:1.5rem;
+    color: #fff;
+    text-wrap: nowrap;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.main-container .box ul li{
+    list-style-type: none;
+    color: #c4c4c4;
+    font-size:15px;
+    margin-bottom: .9rem;
+    text-wrap: nowrap;
+    cursor: pointer;
+    transition: .30s ease;
+}
+
+.main-container .box ul li:hover{
+    color: #fff;
+}
+
+.main-container .box:first-child ul li{
+    font-size: .9rem;
+    line-height:1.2rem;
+    text-wrap: wrap;
+    color: #fff;
+}
+
+.main-container .box:last-child ul li{
+    color: #fff;
+}
+
+footer span{
+    color: #c4c4c4;
+    font-size: .9rem;
+    display: inline-block;
+    text-align: center;
+    margin:1rem 0;
+}
